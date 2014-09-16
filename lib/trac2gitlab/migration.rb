@@ -30,11 +30,11 @@ module Trac2Gitlab
           options.trac_db = trac_db
         end
 
-        opts.on('--gitlab-api-url', 'Gitlab api url') do |gitlab_api_url|
+        opts.on('--gitlab-api-url', String, 'Gitlab api url') do |gitlab_api_url|
           options.gitlab_api_url = gitlab_api_url
         end
 
-        opts.on('--gitlab-api-token', 'Gitlab api token') do |gitlab_api_token|
+        opts.on('--gitlab-api-token', String, 'Gitlab api token') do |gitlab_api_token|
           options.gitlab_api_token = gitlab_api_token
         end
       end.parse!
