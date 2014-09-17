@@ -1,6 +1,7 @@
 require 'optparse'
 require 'ostruct'
 require 'pp'
+require 'sequel'
 
 module Trac2Gitlab
 
@@ -26,8 +27,8 @@ module Trac2Gitlab
           options.verbose = v
         end
 
-        opts.on('--trac-db db-path', String, 'Trac SQLite db file') do |trac_db|
-          options.trac_db = trac_db
+        opts.on('--trac-db db-path', String, 'Trac SQLite db file') do |trac_db_path|
+          options.trac_db_path = trac_db_path
         end
 
         opts.on('--gitlab-api-url', String, 'Gitlab api url') do |gitlab_api_url|
@@ -44,6 +45,12 @@ module Trac2Gitlab
 
     def run!
       pp @options
+
+      trac_db = Sequel.connect(:adapter => 'sqlite', :database => @options.trac_db_path)
+
+      tickets = trac_db[:ticket].all
+
+      pp tickets
     end
   end
 

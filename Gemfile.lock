@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     trac2gitlab (0.0.1)
+      sequel (~> 4.14)
       sqlite3 (~> 1.3.9)
       svn2git
 
@@ -9,6 +10,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     rake (10.3.2)
+    sequel (4.14.0)
     sqlite3 (1.3.9)
     svn2git (2.3.2)
 
