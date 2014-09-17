@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'svn2git'
-gem 'sqlite3', '~>1.3.9'
+# Specify your gem's dependencies in trac2gitlab.gemspec
+gemspec

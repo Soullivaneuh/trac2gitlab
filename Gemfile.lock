@@ -1,6 +1,14 @@
+PATH
+  remote: .
+  specs:
+    trac2gitlab (0.0.1)
+      sqlite3 (~> 1.3.9)
+      svn2git
+
 GEM
   remote: https://rubygems.org/
   specs:
+    rake (10.3.2)
     sqlite3 (1.3.9)
     svn2git (2.3.2)
 
@@ -8,5 +16,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  sqlite3 (~> 1.3.9)
-  svn2git
+  bundler (~> 1.6)
+  rake
+  trac2gitlab!
